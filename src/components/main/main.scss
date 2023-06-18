@@ -1,0 +1,307 @@
+.main {
+  width: 100%;
+
+  .home {
+    .img-header {
+      display: block;
+      object-fit: cover;
+    }
+    .title {
+      position: absolute;
+      top: 100px;
+      right: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+
+      h1 {
+        margin-bottom: 52px;
+        color: var(--White);
+
+        @extend %font-stack-heading;
+        font-size: 2.5rem;
+      }
+      .arrow {
+        margin: 0 auto;
+        width: 30px;
+        animation: jump-down 1.5s ease infinite;
+      }
+      @keyframes jump-down {
+        0%,100%  { transform: translateY(0); }
+        20%,50% { transform: translateY(60px); }
+        30% { transform: translateY(20px); }
+      }
+    }
+  }
+
+  .about {
+    &__content {
+      text-align: center;
+      padding: 64px 24px;
+      
+      > h2 { 
+        margin-bottom: 24px;
+
+        @extend %font-stack-heading;
+        font-size: 2rem;
+        line-height: 39.46px;
+        letter-spacing: -0.23px;
+      }
+
+      > p {
+        margin-bottom: 32px;
+        color: var(--Dark-grayish-blue);
+
+        font-weight: 600;
+        font-size: 1.125rem;
+        line-height: 30px;
+        letter-spacing: -0.13px;
+      }
+
+      > a {
+        position: relative;
+        color: var(--Very-dark-desaturated-blue);
+
+        @extend %font-stack-heading;
+        font-size: 0.93rem;
+        line-height: 25px;
+        letter-spacing: 1px;
+      }
+
+      > a::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        top: 50%;
+        left: 0px;
+        transform: translateX(-5%);
+
+        width: calc(100% + 15px);
+        height: 10px;
+        
+        background: var(--Yellow);   
+        border-radius: 28px;
+        opacity: 0.25;
+        z-index: -1;     
+        transition: 0.25s ease;
+      }
+
+      > a:hover::after {
+        opacity: 1;
+      }
+
+      > a.soft-red::after {
+        background: var(--Soft-red);
+      }
+    }
+
+  }
+
+  .services {
+    &__box {
+      position: relative;
+
+      .services__content {
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
+        padding: 0 24px;
+        padding-bottom: 59px;
+
+        h4 {
+          margin-bottom: 27px;
+          color: var(--Dark-desaturated-cyan);
+
+          @extend %font-stack-heading;
+          font-size: 1.75rem;
+          line-height: 34.52px;
+          letter-spacing: -0.2;
+        }
+        p {
+          color: var(--Dark-desaturated-cyan);
+          font-weight: 600;
+          font-size: 1rem;
+          line-height: 27px;
+          letter-spacing: -0.11px;          
+        }
+      }
+    }
+  }
+
+  .testimonials {
+    text-align: center;
+    padding: 64px 24px;
+
+    &__title {
+      margin-bottom: 64px;
+      color: var(--Grayish-blue);
+      @extend %font-stack-heading;
+      font-size: 1rem;
+      line-height: 19.73px;
+      letter-spacing: 4px;
+    }
+
+    &__list {
+      .client {
+        margin-bottom: 64px;
+
+        &__img {
+          margin-bottom: 32px;
+
+          img {
+            margin: auto;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+          }
+        }
+
+        &__context {
+          margin-bottom: 32px;
+
+          color: var(--Very-dark-grayish-blue);
+          font-weight: 600;
+          font-size: 1.125rem;
+          line-height: 32px;
+          letter-spacing: -0.13;
+        }
+
+        &__name {
+          margin-bottom: 9px;
+          color: var(--Very-dark-desaturated-blue);
+          @extend %font-stack-heading;
+          font-size: 1.125rem;
+          line-height: 22.19px;
+          letter-spacing: -0.13px;
+        }
+
+        &__position {
+          color: var(--Grayish-blue);
+          font-weight: 600;
+          font-size: 0.875rem;
+          line-height: 25px;
+          letter-spacing: -0.1;
+        }
+      }
+    }
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main {
+    .home {
+      .title {
+        h1 {
+          margin-bottom: 96px;
+        }
+      }
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+
+      &__img {
+        img {
+          object-fit: cover;
+        }
+      }
+
+      &__img:first-of-type {
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+
+      &__content {
+        padding: 158px 110px;
+        padding-inline-start: 165px;
+
+        > h2 {
+          margin-bottom: 32px;
+          font-size: 2.5rem;
+          line-height: 49.46px;
+          letter-spacing: -0.29px;
+        }
+
+        > p {
+          margin-bottom: 40px;
+        }
+      }
+
+      &__content:first-of-type {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+
+      &__content:last-of-type {
+        padding: 158px 110px;
+        padding-inline-end: 165px;
+      }
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+
+      &__box {
+        .services__img {
+          width: 100%;
+
+          img {
+            object-fit: cover;
+            max-width: 100%;
+          }
+        }
+
+        .services__content {
+          padding: 0 190px;
+          padding-bottom: 59px;
+        }
+      }
+    }
+
+    .testimonials {
+      padding: 160px 165px;
+      background: #f2f2f2;
+
+      &__title {
+        margin-bottom: 81px;
+        font-size: 1.25rem;
+        line-height: 24.66px;
+        letter-spacing: 5px;
+      }
+
+      &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px; 
+
+        .client {
+          &__img {
+            margin-bottom: 58px;
+          }
+
+          &__context {
+            margin-bottom: 69px;
+          }
+        }
+      }
+    }
+
+    .projects {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+    }
+  }
+}
