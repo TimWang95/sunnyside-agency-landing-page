@@ -7,7 +7,7 @@
   background: transparent;
   padding: 0 24px;
   padding-top: 32px;
-  
+
   .navigate-mobile {
     .navbar-menu {
       position: absolute;
@@ -65,6 +65,10 @@
 
 @media screen and (min-width: 1024px) {
   .header {
+    .logo {
+      width: 170px;
+    }
+    
     .navigate-desktop {
       .navbar-menu {
         display: flex;

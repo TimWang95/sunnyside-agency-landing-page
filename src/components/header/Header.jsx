@@ -1,4 +1,5 @@
-import { ReactComponent as Logo } from "src/assets/icons/logo.svg"
+import logo from 'src/assets/icons/logo.svg'
+// import { ReactComponent as Logo } from "src/assets/icons/logo.svg"
 import { ReactComponent as Hamberger } from "src/assets/icons/icon-hamburger.svg" 
 import useWidthSize from "src/hooks/useWidthSize"
 import useActive from "src/hooks/useActive"
@@ -40,7 +41,7 @@ function Header() {
     <>
       <header className="header">
         <div className="logo">
-          <Logo/>
+          <img src={logo} alt="" />
         </div>
         {width < 1024 ? (
           <div className={active ? "navigate-mobile" : "navigate-mobile bg-none"}>
