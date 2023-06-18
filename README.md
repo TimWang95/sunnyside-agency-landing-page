@@ -9,8 +9,8 @@ This is a solution to the [Sunnyside agency landing page challenge on Frontend M
 
 ## Links
 
-- Solution URL: [GitHub repo](https://github.com/TimWang95/room-homepage)
-- Live Site URL: [solution Demo]()
+- Solution URL: [GitHub repo](https://github.com/TimWang95/sunnyside-agency-landing-page)
+- Live Site URL: [solution Demo](https://lucent-praline-ec32b2.netlify.app/)
 
 
 ## Built with
